@@ -246,8 +246,7 @@ body {
         padding: 0.25rem 0.75rem;
     }
 
-    .close:hover,
-    .close:focus {
+    .close:hover, .close:focus {
         cursor: pointer;
     }
 }

@@ -64,40 +64,35 @@ export const ReviewForm = (props: reviewFormProps): ReactJSXElement => {
         btn && btn.classList.add('hide');
         setSubmitMessage('');
         props.setSelectedMovie(undefined);
-        console.log(`handy breakpoint`);
     }
 
     return (
         <>
-        <div className={`movie-text review-prompt ${!props.selectedMovie && !submitMessage ? 'show' : 'hide'}`}>Click on a movie to review</div>
-        <div ref={closeRef} className={`review-container ${props.selectedMovie ? 'show' : 'hide'}`}>
-            <div className={`review-form-wrapper`}>
-                <div className={`review-form-content`}>
-                    <button onClick={() => closeModal()} className="movie-btn close">close</button>
-                    <div className={`${submitMessage ? 'hide' : 'show'}`}>
-
-                        <div className={`pad-left`}>{!props.selectedMovie ? `No Movie Selected` : getMovieChoice(props.selectedMovie)}</div>
-                        {props.selectedMovie && <p className={`pad-left`}>Please leave a review below</p> }
-                        {props.selectedMovie &&
-                            <form className={`pad-left`} onSubmit={onSubmit}>
-                                <label>
-                                    <textarea
-                                        className={'movie-btn text-area pad-left'}
-                                        name="reviewContent"
-                                        value={review}
-                                        onChange={(e) => onReviewChange(e.target.value)} />
-                                </label>
-                                <div className={`pad-left review-error ${reviewError ? 'show' : 'hide'}`}>Please enter max 100 characters</div>
-                                <button type="submit" className={'pad-left movie-btn submit-btn'} disabled={loading || reviewError}>{!loading ? `submit` : `loading`}</button>
-
-                            </form>}
-
-                        </div>
-                    <div className={`pad-left movie-text submit-message ${submitMessage ? 'show' : 'hide'}`}>{submitMessage}</div>
+            <div className={`movie-text review-prompt ${!props.selectedMovie && !submitMessage ? 'show' : 'hide'}`}>Click on a movie to review</div>
+            <div ref={closeRef} className={`review-container ${props.selectedMovie ? 'show' : 'hide'}`}>
+                <div className={`review-form-wrapper`}>
+                    <div className={`review-form-content`}>
+                        <button onClick={() => closeModal()} className="movie-btn close">close</button>
+                        <div className={`${submitMessage ? 'hide' : 'show'}`}>
+                            <div className={`pad-left`}>{!props.selectedMovie ? `No Movie Selected` : getMovieChoice(props.selectedMovie)}</div>
+                            {props.selectedMovie && <p className={`pad-left`}>Please leave a review below</p> }
+                            {props.selectedMovie &&
+                                <form className={`pad-left`} onSubmit={onSubmit}>
+                                    <label>
+                                        <textarea
+                                            className={'movie-btn text-area pad-left'}
+                                            name="reviewContent"
+                                            value={review}
+                                            onChange={(e) => onReviewChange(e.target.value)} />
+                                    </label>
+                                    <div className={`pad-left review-error ${reviewError ? 'show' : 'hide'}`}>Please enter max 100 characters</div>
+                                    <button type="submit" className={'pad-left movie-btn submit-btn'} disabled={loading || reviewError}>{!loading ? `submit` : `loading`}</button>
+                                </form>}
+                            </div>
+                        <div className={`pad-left movie-text submit-message ${submitMessage ? 'show' : 'hide'}`}>{submitMessage}</div>
+                    </div>
                 </div>
             </div>
-
-        </div>
         </>
     )
 }
