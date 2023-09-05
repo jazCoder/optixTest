@@ -1,0 +1,253 @@
+:root {
+  font-family: Inter, Avenir, Helvetica, Arial, sans-serif;
+  font-size: 16px;
+  line-height: 24px;
+  font-weight: 400;
+  width: 100vw;
+  background-color: aliceblue;
+}
+
+h2.loading {
+    color: white;
+    margin-left: 1rem;
+}
+
+h2 {
+    font-family: Montserrat,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,Noto Sans,sans-serif;
+    color: white;
+    margin: 1.5rem 0;
+}
+
+body {
+    font-family: Montserrat,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,Noto Sans,sans-serif;
+    margin: 0;
+    padding: 0;
+    background: #1F252D;
+    min-height: 100vh;
+}
+
+.main-container, .review-form-wrapper {
+    margin: 0 2rem;
+    width: 80vw;
+    max-width: 50rem;
+    padding: 1rem 0;
+}
+
+.review-form-wrapper {
+    color: white;
+}
+
+.table-container {
+    display: grid;
+    border: 2px solid #296D8A;
+    border-radius: 0.375rem;
+    background: #343D4C;
+}
+
+.table-row-header {
+    color: #ffffff;
+    background: #296D8A;
+    font-weight: 500;
+}
+
+.table-row, .table-row-header {
+    display: grid;
+    grid-template-columns: 2fr 1fr 2fr;
+    grid-column-gap: 1rem;
+    padding: 1rem;
+}
+
+.table-row {
+    border-top: 1px solid #296D8A;
+    color: white;
+}
+
+.movie-row.company {
+    font-style: italic;
+}
+
+.movie-row.title:before, .movie-row.title:after {
+    content: "'";
+}
+
+.mobile-title {
+    display: none;
+}
+
+.table-row.active-row {
+    border: 2px solid lightseagreen;
+    border-radius: 0.375rem;
+}
+
+.review-error {
+    margin: 0.3rem 0;
+    font-size: 0.8rem;
+    font-style: italic;
+    color: red;
+}
+
+.movie-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+}
+
+.movie-btn {
+    font-family: Montserrat,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,Noto Sans,sans-serif;
+    color: #1F252D;
+    border: 2px solid lightseagreen;
+    border-radius: 0.375rem;
+    padding: 0.5rem 1rem;
+    margin: 0.5rem 1rem 0.5rem 0;
+    font-size: 1rem;
+    background: #dfdfdf;
+}
+
+.movie-btn.text-area {
+    display: block;
+    width: 20rem;
+    height: 5rem;
+}
+
+.movie-btn:not(.text-area) {
+    cursor: pointer;
+}
+
+.movie-btn.submit-btn:disabled {
+    display: none;
+}
+
+.movie-btn.submit-btn:hover, .movie-btn.close:hover {
+    color: white;
+    background: #343D4C;
+}
+
+.movie-text {
+    margin: 1.5rem 0;
+    color: white;
+}
+
+.movie-text.review-prompt {
+    padding-bottom: 2rem;
+    margin: 0 2rem;
+}
+
+.show {
+    display: block;
+}
+
+.hide {
+    display: none;
+}
+
+.green {
+    color: lightseagreen;
+}
+
+.movie-choice {
+    display: inline;
+    font-style: italic;
+}
+
+.close {
+    display: none;
+}
+
+@media only screen and (max-width: 600px) {
+    .review-form-wrapper {
+        display: flex;
+        justify-content: center;
+        margin: 0;
+        width: 100vw;
+        height: 100vh;
+        padding: 1rem 0;
+        background: rgba(200,200,200,0.8);
+        position: fixed;
+        top: 0rem;
+        z-index: 1;
+    }
+
+    .review-form-content {
+        flex-direction: column;
+        margin: 0;
+        width: 80vw;
+        padding: 1rem 0;
+        background: #1F252D;
+        position: absolute;
+        top: 7rem;
+        border: 1px solid lightseagreen;
+        border-radius: 0.375rem;
+    }
+
+    .review-form.show {
+        display: flex
+    }
+
+    .pad-left {
+        padding-left: 1rem;
+    }
+
+    .main-container {
+        margin: 0 auto;
+    }
+
+    .table-row-header{
+        display: none;
+    }
+
+    .table-row {
+        display: flex;
+        flex-direction: column;
+        font-size: 0.9rem;
+        color: lightseagreen;
+    }
+
+    .mobile-title {
+        display: inline-flex;
+        padding-right: 0.5rem;
+    }
+
+    .movie-row.title{
+        font-weight: 500;
+        color: white;
+        font-size: 1rem;
+    }
+
+    .movie-buttons {
+        justify-content: space-between;
+    }
+
+    .movie-btn {
+        margin: 0.5rem 0;
+    }
+
+    .movie-choice {
+        display: block;
+    }
+
+    .movie-btn.text-area {
+        width: 80%;
+    }
+
+    h2 {
+        text-align: center;
+        line-height: 2rem;
+    }
+
+    h2.loading {
+        margin: 0 auto;
+    }
+
+    .close {
+        display: flex;
+        float: right;
+        font-size: 0.9rem;
+        margin-right: 1rem;
+        padding: 0.25rem 0.75rem;
+    }
+
+    .close:hover,
+    .close:focus {
+        cursor: pointer;
+    }
+}
